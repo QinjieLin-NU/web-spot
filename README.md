@@ -32,7 +32,7 @@
     export GAZEBO_HOSTNAME=localhost
     roslaunch spot_config gazebo.launch 
     roslaunch spot_config slam.launch rviz:=true
-    roslaunch rosbridge_server rosbridge_websocket.launch
+    roslaunch rosbridge_server rosbridge_websocket.launch websocket_external_port:=$(NodePort)
     ```
 
 2. launch webviz and then open link [http://localhost:8080/?rosbridge-websocket-url=ws://localhost:9090](http://localhost:8080/?rosbridge-websocket-url=ws://localhost:9090). 
