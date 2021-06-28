@@ -1,0 +1,157 @@
+{
+    "layout": {
+      "direction": "row",
+      "first": {
+        "first": {
+          "first": "Plot!2e0xuzk",
+          "second": "Plot!3ezf3pp",
+          "direction": "row"
+        },
+        "second": {
+          "first": "ImageViewPanel!evrdye",
+          "second": "3D Panel!1hhhmsp",
+          "direction": "row"
+        },
+        "direction": "column",
+        "splitPercentage": 50.23364290610562
+      },
+      "second": {
+        "first": "ImageViewPanel!343l62c",
+        "second": {
+          "first": "Table!ls3yoi",
+          "second": "RosOut!2rs1llc",
+          "direction": "column"
+        },
+        "direction": "column"
+      },
+      "splitPercentage": 50
+    },
+    "savedProps": {
+      "Plot!2e0xuzk": {
+        "paths": [
+          {
+            "value": "/odom.pose.pose.position.x",
+            "enabled": true,
+            "timestampMethod": "receiveTime"
+          },
+          {
+            "value": "/odom.pose.pose.position.y",
+            "enabled": true,
+            "timestampMethod": "receiveTime"
+          },
+          {
+            "value": "/odom.pose.pose.position.z",
+            "enabled": true,
+            "timestampMethod": "receiveTime"
+          }
+        ],
+        "minYValue": "",
+        "maxYValue": "",
+        "showLegend": true,
+        "xAxisVal": "timestamp"
+      },
+      "Plot!3ezf3pp": {
+        "paths": [
+          {
+            "value": "/joint_states.position[:]",
+            "enabled": true,
+            "timestampMethod": "receiveTime"
+          }
+        ],
+        "minYValue": "",
+        "maxYValue": "",
+        "showLegend": true,
+        "xAxisVal": "timestamp"
+      },
+      "ImageViewPanel!evrdye": {
+        "cameraTopic": "/camera/rgb/image_raw",
+        "enabledMarkerTopics": [],
+        "customMarkerTopicOptions": [],
+        "scale": 0.2,
+        "transformMarkers": true,
+        "synchronize": false,
+        "mode": "other",
+        "zoomPercentage": 97.08333333333333,
+        "offset": [
+          0,
+          0
+        ]
+      },
+      "3D Panel!1hhhmsp": {
+        "checkedKeys": [
+          "name:Topics",
+          "t:/map",
+          "t:/scan"
+        ],
+        "expandedKeys": [
+          "name:root",
+          "name:Topics",
+          "t:/camera/depth/points",
+          "t:/foot",
+          "t:/map",
+          "t:/move_base/DWAPlannerROS/cost_cloud",
+          "t:/move_base/DWAPlannerROS/global_plan",
+          "t:/move_base/DWAPlannerROS/local_plan",
+          "t:/move_base/DWAPlannerROS/trajectory_cloud",
+          "t:/move_base/GlobalPlanner/plan",
+          "t:/move_base/GlobalPlanner/potential",
+          "t:/move_base/current_goal",
+          "t:/move_base/global_costmap/costmap",
+          "t:/move_base/global_costmap/footprint",
+          "t:/move_base/local_costmap/costmap",
+          "t:/move_base/local_costmap/footprint",
+          "t:/move_base_simple/goal",
+          "t:/occupied_cells_vis_array",
+          "t:/scan",
+          "t:/tf_static"
+        ],
+        "followTf": null,
+        "cameraState": {
+          "distance": 22.9735058594652,
+          "perspective": true,
+          "phi": 0.7853981633974483,
+          "targetOffset": [
+            2.218526562500001,
+            0.24104144899595406,
+            0
+          ],
+          "thetaOffset": 0,
+          "fovy": 0.7853981633974483,
+          "near": 0.01,
+          "far": 5000
+        },
+        "modifiedNamespaceTopics": [],
+        "pinTopics": false,
+        "settingsByKey": {},
+        "autoSyncCameraState": false,
+        "autoTextBackgroundColor": true
+      },
+      "Table!ls3yoi": {
+        "topicPath": "/imu/data",
+        "columnConfigs": {}
+      },
+      "ImageViewPanel!343l62c": {
+        "cameraTopic": "/world_view/world_camera/world_raw_image",
+        "enabledMarkerTopics": [],
+        "customMarkerTopicOptions": [],
+        "scale": 0.2,
+        "transformMarkers": true,
+        "synchronize": false,
+        "mode": "other",
+        "zoomPercentage": 40.54862097820427,
+        "offset": [
+          122.43927878097776,
+          20.634910830413446
+        ]
+      }
+    },
+    "globalVariables": {},
+    "userNodes": {},
+    "linkedGlobalVariables": [],
+    "playbackConfig": {
+      "speed": 1,
+      "messageOrder": "receiveTime",
+      "timeDisplayMethod": "ROS"
+    },
+    "version": 17
+  }
