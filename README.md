@@ -5,6 +5,7 @@
 1. Install ros melodic on the computer. [link](http://wiki.ros.org/melodic/Installation/Ubuntu)
     ```
     apt install -y ros-melodic-joint-state-publisher-gui ros-melodic-interactive-marker-twist-server ros-melodic-robot-state-publisher
+    apt-get install -y ros-melodic-rosbridge-suite
     ```
 
 2. Build packages
