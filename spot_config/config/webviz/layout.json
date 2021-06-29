@@ -142,11 +142,11 @@
       "scale": 0.2,
       "transformMarkers": true,
       "synchronize": false,
-      "mode": "other",
-      "zoomPercentage": 40.54862097820427,
+      "mode": "fill",
+      "zoomPercentage": 53.22916666666667,
       "offset": [
         0,
-        0
+        -52.9375
       ]
     }
   },

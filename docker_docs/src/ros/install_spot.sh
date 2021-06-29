@@ -11,9 +11,10 @@ git clone https://github.com/QinjieLin-NU/web-spot.git
 cd /root/spot_ws
 apt-get install -y python-pip
 pip install  rosdep
-rosdep init
-rosdep update
-rosdep install --from-paths src --ignore-src -r -y
+source /opt/ros/melodic/setup.bash && \
+rosdep init && \
+rosdep update && \
+rosdep install --from-paths src --ignore-src -r -y 
 source /opt/ros/melodic/setup.bash && \
 catkin_make
 
