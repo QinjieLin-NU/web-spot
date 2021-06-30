@@ -93,6 +93,9 @@ RUN sh /$HOME/installation_dep/install_ros.sh
 COPY ./src/ros/install_spot.sh /$HOME/installation_dep/
 RUN sh /$HOME/installation_dep/install_spot.sh
 
+RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; rosdep init; rosdep update'
+RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /root/spot_ws; rosdep install --from-paths src --ignore-src -r -y'
+RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /root/spot_ws; catkin_make'
 
 #===================important=================
 COPY ./src/common/start_scripts/ $STARTUPDIR/
