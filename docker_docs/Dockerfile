@@ -22,12 +22,12 @@ WORKDIR $HOME
 
 ENV NCCL_VERSION=2.4.7-1+cuda10.0
 
-COPY ./src/common/install/ $INST_SCRIPTS/
-COPY ./src/ubuntu/install/ $INST_SCRIPTS/
-COPY ./src/common/xfce/ $INST/
-COPY ./src/common/scripts $STARTUPDIR
-COPY ./src/ubuntu/repo/sshd_config /etc/ssh/
-ADD ./src/homeinit/ $INST/
+COPY ./docker_docs/src/common/install/ $INST_SCRIPTS/
+COPY ./docker_docs/src/ubuntu/install/ $INST_SCRIPTS/
+COPY ./docker_docs/src/common/xfce/ $INST/
+COPY ./docker_docs/src/common/scripts $STARTUPDIR
+COPY ./docker_docs/src/ubuntu/repo/sshd_config /etc/ssh/
+ADD ./docker_docs/src/homeinit/ $INST/
 
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 RUN apt-get update -y \
@@ -88,19 +88,29 @@ RUN apt install -y sshpass libtool libtool-bin
 
 
 #install ros, ros2 and webots
-COPY ./src/ros/install_ros.sh /$HOME/installation_dep/
+COPY ./docker_docs/src/ros/install_ros.sh /$HOME/installation_dep/
 RUN sh /$HOME/installation_dep/install_ros.sh
-COPY ./src/ros/install_spot.sh /$HOME/installation_dep/
+COPY ./docker_docs/src/ros/install_spot.sh /$HOME/installation_dep/
 RUN sh /$HOME/installation_dep/install_spot.sh
+ADD ./champ /$HOME/spot_ws/src/champ 
+ADD ./champ_teleop /$HOME/spot_ws/src/champ_teleop 
+ADD ./spot_config /$HOME/spot_ws/src/spot_config 
+ADD ./spot_ros /$HOME/spot_ws/src/spot_ros 
+ADD ./yocs_velocity_smoother /$HOME/spot_ws/src/yocs_velocity_smoother 
 
 RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; rosdep init; rosdep update'
 RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /root/spot_ws; rosdep install --from-paths src --ignore-src -r -y'
 RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /root/spot_ws; catkin_make'
 
+#install operator gui
+ADD ./operator_gui /$HOME/spot_ws/src/operator_gui 
+COPY ./docker_docs/src/ros/install_operator.sh /$HOME/installation_dep/
+RUN sh /$HOME/installation_dep/install_operator.sh
+
 #===================important=================
-COPY ./src/common/start_scripts/ $STARTUPDIR/
-COPY ./src/common/bin/ /usr/local/bin/
-COPY ./src/startup/ $STARTUPDIR/
+COPY ./docker_docs/src/common/start_scripts/ $STARTUPDIR/
+COPY ./docker_docs/src/common/bin/ /usr/local/bin/
+COPY ./docker_docs/src/startup/ $STARTUPDIR/
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR 
 
 # add users

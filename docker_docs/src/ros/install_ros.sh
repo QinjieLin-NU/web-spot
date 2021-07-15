@@ -8,3 +8,6 @@ apt install -y ros-melodic-joint-state-publisher-gui ros-melodic-interactive-mar
 apt-get install -y ros-melodic-rosbridge-suite
 apt-get install -y python-pip
 pip install  rosdep
+
+apt-get install -y ros-melodic-web-video-server && \
+apt-get install -y ros-melodic-tf2-web-republisher

@@ -154,7 +154,7 @@ roslaunch spot_config slam.launch rviz:=true & sleep 2; \
 roslaunch rosbridge_server rosbridge_websocket.launch _port:=9090 & sleep 1; \
 rosrun rosapi rosapi_node & rosrun tf2_web_republisher tf2_web_republisher  & sleep 1 & rosrun web_video_server web_video_server _port:=9092  & sleep 1;\
 cd  /opt/ros/melodic/share ;\
-python  /root/operator-gui/gui/src/pose_publisher.py  & python cors_server.py 9094  & cd  /root/operator-gui/gui ; python -m SimpleHTTPServer 9096
+python  /root/spot_ws/src/operator_gui/gui/src/pose_publisher.py  & python cors_server.py 9094  & cd  /root/spot_ws/src/operator_gui/gui ; python -m SimpleHTTPServer 9096
 
 if [ -z "$1" ] || [[ $1 =~ -w|--wait ]]; then
     echo $PID_SUB

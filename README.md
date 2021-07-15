@@ -47,14 +47,15 @@
 
 1. Launch spot simulation
     ```
-    cd docker_docs
-    docker build -t qinjielin/web-spot:v0.1 .
-    docker run --network host qinjielin/web-spot:v0.1
+    docker build -t qinjielin/web-spot:v0.2 -f docker_docs/Dockerfile .
+    docker run --network host qinjielin/web-spot:v0.2
     ```
 
 2. launch spot simulation with operator gui
     ```
-    cd docker_docs
-    docker build -t qinjielin/web-spot-operator:v0.1  -f operator.Dockerfile .
-    docker run --network host qinjielin/web-spot-operator:v0.1
+    docker build -t qinjielin/web-spot-operator:v0.2  -f docker_docs/operator.Dockerfile .
+    docker run --network host qinjielin/web-spot-operator:v0.2
     ```
+    open hostIP:9096/operator.html
+    
+    <img src="./figures/operator.PNG" width=50% height=50%>
