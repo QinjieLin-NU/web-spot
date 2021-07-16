@@ -26,6 +26,9 @@
 <script src="js/OccupancyGridClientNav.js"></script> 
 <script src="js/Navigator.js"></script> 
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
 
     // set up joystick
@@ -178,10 +181,30 @@
 </head>
 
 <body>
+
+  <div class="dropdown">
+    <button type="button" class="btn  btn-primary" class="dropbtn">Robot Menu</button>
+    <div class="dropdown-content">
+      <a href="http://192.168.10.68:9096/operator.html" >Spot.Operator</a>
+      <a href="http://192.168.10.68:9096/observer.html">Spot.Observer</a>
+      <a href="http://192.168.50.4:8000/gui/gui.html" >Pyrobot.Operator</a>
+      <a href="http://192.168.100.108:31332/?rosbridge-websocket-url=ws://192.168.50.4:9090">Pyrobot.Observer</a>
+    </div>
+
+  </div>
+
   <div>
     <img id="my_image" class="imageViwer-panel" src="http://localhost:8001/stream?topic=/camera/rgb/image_raw">
-    <div id="urdf" class="urdf-panel"></div>
-    <div id="nav_panel" class="nav-panel"></div>
+    <div class="urdf-panel comp-panel panel panel-primary urdf-banner">
+      <div class="comp-panel panel-heading">Robot Viewer</div>
+      <div id="urdf" class="urdf-banner"></div>
+    </div>
+    <div class="nav-panel panel panel-primary urdf-banner">
+      <div class="panel-heading">Map Viewer</div>
+      <div id="nav_panel" ></div>
+    </div>
+    <!-- <div id="urdf" class="urdf-panel"></div> -->
+    <!-- <div id="nav_panel" class="nav-panel"></div> -->
     <div id="zone_joystick" class="joystick-panel" ></div>
   </div>
   <script>
