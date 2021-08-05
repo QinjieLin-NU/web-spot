@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+<link rel="stylesheet" href="operator_style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- <h1>The iframe element</h1> -->
+<div class="dropdown">
+  <button type="button" class="btn  btn-primary" class="dropbtn"> Robot Menu </button>
+  <div class="dropdown-content">
+    <a href="http://192.168.10.68:9096/operator.html" >Spot.Operator</a>
+    <a href="http://192.168.10.68:9096/observer.html">Spot.Observer</a>
+    <a href="http://192.168.50.4:8000/gui/gui.html" >Pyrobot.Operator</a>
+    <a href="http://192.168.100.108:31332/?rosbridge-websocket-url=ws://192.168.50.4:9090">Pyrobot.Observer</a>
+  </div>
+</div>
+<div class="observe-iframe">
+    <!-- <iframe src="http://192.168.10.68:8080/?rosbridge-websocket-url=ws://192.168.10.68:9090&layout-url=https%3A%2F%2Fobs-layout.s3.us-east-2.amazonaws.com%2Flayout.json"   style="position: absolute; height: 98%; border: none; top: 0%" width="99.5%" > -->
+    <iframe src="http://192.168.10.68:8080/?rosbridge-websocket-url=ws://192.168.10.68:9090&layout-url=https%3A%2F%2Fobs-layout.s3.us-east-2.amazonaws.com%2FspotObs2.json"   style="position: absolute; height: 98%; border: none; top: 0%" width="99.5%" >
+      </iframe>
+</div>
+</body>
+</html>

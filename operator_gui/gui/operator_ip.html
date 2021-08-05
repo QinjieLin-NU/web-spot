@@ -74,7 +74,7 @@
   function init(host_ip,ros_port,urdf_port) {
     // Connect to ROS.
     var ros = new ROSLIB.Ros({
-      url : 'ws://'+host_ip+':'+ros_port  //'ws://localhost:9090'
+      url : 'ws://'+host_ip+':'+ros_port  //'ws://192.168.10.68:9090'
     });
 
     // Create the main viewer.
@@ -183,18 +183,18 @@
 <body>
 
   <div class="dropdown">
-    <button type="button" class="btn  btn-primary" class="dropbtn" onclick="window.location.href='http://localhost:9096';"> Robot Menu </button>
+    <button type="button" class="btn  btn-primary" class="dropbtn">Robot Menu</button>
     <div class="dropdown-content">
-      <a href="http://localhost:9096/operator.html" >Spot.Operator</a>
-      <a href="http://localhost:9096/observer.html">Spot.Observer</a>
-      <a href="http://localhost:8001/gui/gui.html" >Pyrobot.Operator</a>
-      <a href="http://localhost:9096/observer_pyrobot.html">Pyrobot.Observer</a>
+      <a href="http://192.168.10.68:9096/operator.html" >Spot.Operator</a>
+      <a href="http://192.168.10.68:9096/observer.html">Spot.Observer</a>
+      <a href="http://192.168.50.4:8000/gui/gui.html" >Pyrobot.Operator</a>
+      <a href="http://192.168.100.108:31332/?rosbridge-websocket-url=ws://192.168.50.4:9090">Pyrobot.Observer</a>
     </div>
 
   </div>
 
   <div>
-    <img id="my_image" class="imageViwer-panel" src="http://localhost:9092/stream?topic=/camera/rgb/image_raw">
+    <img id="my_image" class="imageViwer-panel" src="http://192.168.10.68:9092/stream?topic=/camera/rgb/image_raw">
     <div class="urdf-panel comp-panel panel panel-primary urdf-banner">
       <div class="comp-panel panel-heading">Robot Viewer</div>
       <div id="urdf" class="urdf-banner"></div>
@@ -209,7 +209,7 @@
   </div>
   <script>
     window.onload=function(){
-        var host_ip = 'localhost';//'localhost' ;
+        var host_ip = '192.168.10.68';//'192.168.10.68' ;
         var ros_port= 9090 ;
         var video_port = 9092 ;
         var urdf_port = 9094 ;
